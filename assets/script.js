@@ -59,7 +59,7 @@ arrowLeft.addEventListener("click", () => {
 arrowRight.addEventListener("click", () => {
 
     // Debug
-    console.log(arrowRight); 
+    console.log(arrowRight);
 
     // Avance dans le carrousel
     changeSlide(1);
@@ -76,7 +76,7 @@ function updateActiveDot() {
 
     // Ajoute la classe "dot_selected" au point correspondant à l'index actuel
     dots[currentIndex].classList.add("dot_selected");
-    
+
 }
 
 // Mise à jour du carrousel en fonction de la direction
@@ -86,13 +86,13 @@ function changeSlide(direction) {
     currentIndex = currentIndex + direction;
 
     // Si dépassement de la dernière image, retour à la première
-    if (currentIndex > 3) {
+    if (currentIndex > slides.length - 1) {
         currentIndex = 0;
     }
 
     // Si dépassement de la première image, retour à la dernière
     if (currentIndex < 0) {
-        currentIndex = 3;
+        currentIndex = slides.length - 1;
     }
 
     updateActiveDot();
